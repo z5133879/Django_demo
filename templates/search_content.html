@@ -1,0 +1,808 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<head>
+        {% load staticfiles %}
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Contact Us</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="{%static "img/favicon.ico"%}">
+		<!-- Place favicon.ico in the root directory -->
+		
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+		<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="{%static "css/bootstrap.min.css"%}">
+		<!-- animate css -->
+		<link rel="stylesheet" href="{%static "css/animate.css"%}">
+		<!-- jquery-ui.min css -->
+		<link rel="stylesheet" href="{%static "css/jquery-ui.min.css"%}">
+		<!-- meanmenu css -->
+		<link rel="stylesheet" href="{%static "css/meanmenu.min.css"%}">
+		<!-- nivo-slider css -->
+		<link rel="stylesheet" href="{%static "lib/css/nivo-slider.css"%}">
+		<link rel="stylesheet" href="{%static "lib/css/preview.css"%}">
+		<!-- slick css -->
+		<link rel="stylesheet" href="{%static "css/slick.css"%}">
+		<!-- lightbox css -->
+		<link rel="stylesheet" href="{%static "css/lightbox.min.css"%}">
+		<!-- material-design-iconic-font css -->
+		<link rel="stylesheet" href="{%static "css/material-design-iconic-font.css"%}">
+		<!-- All common css of theme -->
+		<link rel="stylesheet" href="{%static "css/default.css"%}">
+		<!-- style css -->
+		<link rel="stylesheet" href="{%static "css/style.css"%}">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="{%static "css/shortcode.css"%}">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="{%static "css/responsive.css"%}">
+		<style type="text/css">
+		.canfloat
+		{
+			position: fixed;
+			top:220px;
+			right: 0px;
+			width: 43.333%;
+			
+			
+			
+		}
+		.absoult{
+			position: absolute;
+		}
+		.relatted{
+			position: relative;
+		}
+		</style>
+		<!-- modernizr css -->
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script type="text/javascript">
+			         $(function () {
+			            $(window).scroll(function () {
+			                 var ref_min = $("#sign")[0];
+			                 if (!ref_min) return;
+			                 var scroll_top = $(window).scrollTop();
+			                 var ref_height_min = ref_min.offsetTop + $("#floatdiv")[0].offsetHeight;
+			                 if (scroll_top > ref_height_min) {
+			                     $("#floatdiv").addClass("canfloat");
+			                 } else {
+			                     $("#floatdiv").removeClass("canfloat");
+			                 }
+			            });
+			         });
+			     </script>
+	</head>
+	<body>	
+		<!-- WRAPPER START -->
+		<div class="wrapper bg-dark-white">
+
+			<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header">
+					<div class="header-area">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 col-sm-offset-1 col-xs-6">
+									<!-- SEARCH -->
+									<form action="" method="POST" >
+										{% csrf_token %}
+									<div class="row">
+													<div class="col-md-12">
+														<div class="customer-login_small">
+	
+															<div class="row">
+																<div class="col-md-4 col-sm-4 col-xs-12">
+																	<input  type="text" placeholder="Location.. ">
+																</div>
+																<div class="col-md-4 col-sm-4 col-xs-12">
+																	<input class="custom-select" type="date" placeholder="Start Date">
+																</div>
+																<div class="col-md-4 col-sm-4 col-xs-12">
+																	<input class="custom-select" type="date" placeholder="End Date">
+																</div>
+															</div>
+															<button type="submit" data-text="get a quote" class="button-one submit-button mt-15" name="search_button_left">Search</button>
+														</div>
+													</div>
+												</div>
+									</form>
+	
+	
+	
+								</div>
+								<div class="col-sm-3 col-xs-4">
+									<div class="mini-cart text-right">
+										<ul>
+											<li>
+												<a class="cart-icon" href="#">
+													<i class="zmdi zmdi-shopping-cart"></i>
+													<span>3</span>
+												</a>
+												<div class="mini-cart-brief text-left">
+													<div class="cart-items">
+														<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+													</div>
+													<div class="all-cart-product clearfix">
+														<div class="single-cart clearfix">
+															<div class="cart-photo">
+																<a href="#"><img src="{%static "img/cart/1.jpg"%}" alt="" /></a>
+															</div>
+															<div class="cart-info">
+																<h5><a href="#">dummy product name</a></h5>
+																<p class="mb-0">Price : $ 100.00</p>
+																<p class="mb-0">Qty : 02 </p>
+																<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+															</div>
+														</div>
+														<div class="single-cart clearfix">
+															<div class="cart-photo">
+																<a href="#"><img src="{%static "img/cart/2.jpg"%}" alt="" /></a>
+															</div>
+															<div class="cart-info">
+																<h5><a href="#">dummy product name</a></h5>
+																<p class="mb-0">Price : $ 300.00</p>
+																<p class="mb-0">Qty : 01 </p>
+																<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+															</div>
+														</div>
+													</div>
+													<div class="cart-totals">
+														<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+													</div>
+													<div class="cart-bottom  clearfix">
+														<a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+														<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+					<!-- MAIN-MENU START -->
+					<div class="menu-toggle hamburger hamburger--emphatic hidden-xs">
+						<div class="hamburger-box">
+							<div class="hamburger-inner"></div>
+						</div>
+					</div>
+					<form action="" method="POST" >
+						{% csrf_token %}
+					<div class="main-menu  hidden-xs">
+						<nav>
+							<ul>
+								<li><a href="">home</a></li>
+								<li><a href="login">login / Register</a></li>
+								<li><a href="shop.html">lookbook</a></li>
+								<li><a href="blog.html">blog</a></li>
+								<li><a href="#">pages</a>
+									<div class="sub-menu menu-scroll">
+										<ul>
+											<li class="menu-title">Page's</li>
+											<li><a href="shop.html">Shop</a></li>
+											<li><a href="single-product.html">Single Product</a></li>
+											<li><a href="cart.html">Shopping Cart</a></li>
+											<li><a href="wishlist.html">Wishlist</a></li>
+											<li><a href="checkout.html">Checkout</a></li>
+											<li><a href="order.html">Order</a></li>
+											<li><a href="login.html">login / Registration</a></li>
+											<li><a href="my-account.html">My Account</a></li>
+											<li><a href="404.html">404</a></li>
+											<li><a href="blog.html">Blog</a></li>
+											<li><a href="single-blog.html">Single Blog</a></li>
+											<li><a href="about.html">About Us</a></li>
+											<li><a href="search_content.html">Contact</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="about.html">about us</a></li>
+								<li><a href="coantact.html">contact</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!-- MAIN-MENU END -->
+				   </form>
+				</header>
+				<!-- HEADER-AREA END -->
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+										<li><a href="index.html">home</a></li>
+										<li><a href="shop.html">products</a></li>
+										<li><a href="shop.html">accesories</a></li>
+										<li><a href="shop.html">lookbook</a></li>
+										<li><a href="blog.html">blog</a></li>
+										<li><a href="#">pages</a>
+											<ul>
+												<li><a href="shop.html">Shop</a></li>
+												<li><a href="single-product.html">Single Product</a></li>
+												<li><a href="cart.html">Shopping Cart</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="order.html">Order</a></li>
+												<li><a href="login.html">login / Registration</a></li>
+												<li><a href="my-account.html">My Account</a></li>
+												<li><a href="404.html">404</a></li>
+												<li><a href="blog.html">Blog</a></li>
+												<li><a href="single-blog.html">Single Blog</a></li>
+												<li><a href="about.html">About Us</a></li>
+												<li><a href="search_content.html">Contact</a></li>
+											</ul>
+										</li>
+										<li><a href="about.html">about us</a></li>
+										<li><a href="search_content.html">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->
+			
+			<!-- HEADING-BANNER END -->
+			<!-- contact-us-AREA START -->
+			<div class="contact-us-area">
+				<div class="container-fluid">	
+					<div class="contact-us customer-login_small bg-white">
+						<div class="row">
+							<div class="col-lg-8 col-md-8 col-sm-5 col-xs-12">
+								<!-- BLGO-AREA START -->
+			
+				
+					
+						
+
+					<div class="blog">
+						<div class="row">
+							<div class="col-md-11">
+								<div class="product-option mb-30 clearfix">
+									<!-- Categories start -->
+									<div class="dropdown floatleft">
+										<button class="option-btn active" data-toggle="dropdown" >
+										Categories
+										</button>
+										<div class="dropdown-menu dropdown-width" >
+											<!-- Widget-Categories start -->
+											<aside class="widget widget-categories">
+												<div class="widget-title">
+													<h4>Categories</h4>
+												</div>
+												<div id="cat-treeview"  class="widget-info product-cat boxscrol2">
+													<ul>
+														<li><span>Chair</span>
+															<ul>
+																<li><a href="#">T-Shirts</a></li>
+																<li><a href="#">Striped Shirts</a></li>
+																<li><a href="#">Half Shirts</a></li>
+																<li><a href="#">Formal Shirts</a></li>
+																<li><a href="#">Bilazers</a></li>
+															</ul>
+														</li>          
+														<li class="open"><span>Furniture</span>
+															<ul>
+																<li><a href="#">Men Bag</a></li>
+																<li><a href="#">Shoes</a></li>
+																<li><a href="#">Watch</a></li>
+																<li><a href="#">T-shirt</a></li>
+																<li><a href="#">Shirt</a></li>
+															</ul>
+														</li>          
+														<li><span>Accessories</span>
+															<ul>
+																<li><a href="#">T-Shirts</a></li>
+																<li><a href="#">Striped Shirts</a></li>
+																<li><a href="#">Half Shirts</a></li>
+																<li><a href="#">Formal Shirts</a></li>
+																<li><a href="#">Bilazers</a></li>
+															</ul>
+														</li>
+														<li><span>Top Brands</span>
+															<ul>
+																<li><a href="#">T-Shirts</a></li>
+																<li><a href="#">Striped Shirts</a></li>
+																<li><a href="#">Half Shirts</a></li>
+																<li><a href="#">Formal Shirts</a></li>
+																<li><a href="#">Bilazers</a></li>
+															</ul>
+														</li>
+														<li><span>Jewelry</span>
+															<ul>
+																<li><a href="#">T-Shirts</a></li>
+																<li><a href="#">Striped Shirts</a></li>
+																<li><a href="#">Half Shirts</a></li>
+																<li><a href="#">Formal Shirts</a></li>
+																<li><a href="#">Bilazers</a></li>
+															</ul>
+														</li>
+													</ul>
+												</div>
+											</aside>
+											<!-- Widget-categories end -->
+										</div>
+									</div>	
+									<!-- Categories end -->
+									<!-- Price start -->
+									<div class="dropdown floatleft">
+										<button class="option-btn" data-toggle="dropdown" >
+										Price
+										</button>
+										<div class="dropdown-menu dropdown-width" >
+											<!-- Shop-Filter start -->
+											<aside class="widget shop-filter">
+												<div class="widget-title">
+													<h4>Price</h4>
+												</div>
+												<div class="widget-info">
+													<div class="price_filter">
+														<div class="price_slider_amount">
+															<input type="submit"  value="You range :"/> 
+															<input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
+														</div>
+														<div id="slider-range"></div>
+													</div>
+												</div>
+											</aside>
+											<!-- Shop-Filter end -->
+										</div>
+									</div>	
+									<!-- Price end -->
+									<!-- Color start -->
+									<div class="dropdown floatleft">
+										<button class="option-btn" data-toggle="dropdown" >
+										Color
+										</button>
+										<div class="dropdown-menu dropdown-width" >
+											<!-- Widget-Color start -->
+											<aside class="widget widget-color">
+												<div class="widget-title">
+													<h4>Color</h4>
+												</div>
+												<div class="widget-info color-filter clearfix">
+													<ul>
+														<li><a href="#"><span class="color color-1"></span>LightSalmon<span class="count">12</span></a></li>
+														<li><a href="#"><span class="color color-2"></span>Dark Salmon<span class="count">20</span></a></li>
+														<li><a href="#"><span class="color color-3"></span>Tomato<span class="count">59</span></a></li>
+														<li class="active"><a href="#"><span class="color color-4"></span>Deep Sky Blue<span class="count">45</span></a></li>
+														<li><a href="#"><span class="color color-5"></span>Electric Purple<span class="count">78</span></a></li>
+														<li><a href="#"><span class="color color-6"></span>Atlantis<span class="count">10</span></a></li>
+														<li><a href="#"><span class="color color-7"></span>Deep Lilac<span class="count">15</span></a></li>
+													</ul>
+												</div>
+											</aside>
+											<!-- Widget-Color end -->
+										</div>
+									</div>
+									<!-- Color end -->
+									<!-- Size start -->
+									<div class="dropdown floatleft">
+										<button class="option-btn" data-toggle="dropdown" >
+										Size
+										</button>
+										<div class="dropdown-menu dropdown-width" >
+											<!-- Widget-Size start -->
+											<aside class="widget widget-size">
+												<div class="widget-title">
+													<h4>Size</h4>
+												</div>
+												<div class="widget-info size-filter clearfix">
+													<ul>
+														<li><a href="#">M</a></li>
+														<li class="active"><a href="#">S</a></li>
+														<li><a href="#">L</a></li>
+														<li><a href="#">SL</a></li>
+														<li><a href="#">XL</a></li>
+													</ul>
+												</div>
+											</aside>
+											<!-- Widget-Size end -->
+										</div>
+									</div>	
+									<!-- Size end -->								
+									<div class="showing text-center hidden-xs">
+										<p class="mb-0">Showing 01-09 of 17 Results</p>
+									</div>
+								</div>						
+							</div>							
+						</div>
+						<div class="row">
+						
+							<!-- Single-blog start -->
+							
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/3.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							
+							
+							<!-- Single-blog end -->
+
+							
+
+
+
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/4.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/5.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/6.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+							
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/8.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/3.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<a href="#"><img src="{%static "img/blog/4.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+							<!-- Single-blog start -->
+							<div class="col-lg-9 col-sm-10 col-xs-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+									<a href="#"><img src="{%static "img/blog/9.jpg"%}" alt="" /></a>
+										<div class="like-share text-center fix">
+											<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
+											<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
+											<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
+										</div>
+									</div>
+									<div class="blog-info"> 
+										<div class="post-meta fix">
+											<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
+											<div class="post-year floatleft">
+												<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
+												<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
+											</div>
+										</div>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
+										<a href="#" class="button-2 text-dark-red">Read more...</a>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+						
+
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<!-- Pagination start -->
+								<div class="shop-pagination  text-center">
+									<div class="pagination">
+										<ul>
+											<li><a href="#"><i class="zmdi zmdi-long-arrow-left"></i></a></li>
+											<li><a href="#">01</a></li>
+											<li class="active"><a href="#">02</a></li>
+											<li><a href="#">03</a></li>
+											<li><a href="#">04</a></li>
+											<li><a href="#">05</a></li>
+											<li class="active"><a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- Pagination end -->							
+							</div>
+						</div>
+					
+					
+
+					
+					
+				</div>
+			</div>
+			
+			<!-- BLGO-AREA END -->	
+								
+						
+							
+							<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 mt-xs-30 canfloat">
+								
+									
+									<div class="map-area">
+											<div id="googleMap" style="width:100%;height:450px;"></div>
+										</div>
+									
+									
+								</div>
+							
+								
+						
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<!-- ABOUT-US-AREA END -->
+			<!-- FOOTER START -->
+			<footer>
+				<!-- Footer-area start -->
+				<div class="footer-area footer-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Contact Us</h3>
+									<ul class="footer-contact">
+										<li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+										<li><span>Cell-Phone :</span>012345 - 123456789</li>
+										<li><span>Email :</span>your-email@gmail.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">accounts</h3>
+									<ul class="footer-menu">
+										<li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+										<li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+										<li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+										<li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+										<li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+				<!-- Footer-area end -->
+				<!-- Copyright-area start -->
+				<div class="copyright-area copyright-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="copyright">
+									<p class="mb-0">Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://www.aspku.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+								</div>
+								<div class="payment  text-left">
+										<a href="#"><img src="{%static "img/payment/1.png"%}" alt="" /></a>
+										<a href="#"><img src="{%static "img/payment/2.png"%}" alt="" /></a>
+										<a href="#"><img src="{%static "img/payment/3.png"%}" alt="" /></a>
+										<a href="#"><img src="{%static "img/payment/4.png"%}" alt="" /></a>
+									</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- Copyright-area start -->
+			</footer>
+			<!-- FOOTER END -->
+			
+		</div>
+		<!-- WRAPPER END -->
+
+		<!-- all js here -->
+		<!-- jquery latest version -->
+		<script src="{%static "js/vendor/jquery-1.12.0.min.js"%}"></script>
+		<!-- bootstrap js -->
+		<script src="{%static "js/bootstrap.min.js"%}"></script>
+		<!-- jquery.meanmenu js -->
+		<script src="{%static "js/jquery.meanmenu.js"%}"></script>
+		<!-- slick.min js -->
+		<script src="{%static "js/slick.min.js"%}"></script>
+		<!-- jquery.treeview js -->
+		<script src="{%static "js/jquery.treeview.js"%}"></script>
+		<!-- lightbox.min js -->
+		<script src="{%static "js/lightbox.min.js"%}"></script>
+		<!-- jquery-ui js -->
+		<script src="{%static "js/jquery-ui.min.js"%}"></script>
+		<!-- jquery.nivo.slider js -->
+		<script src="{%static "lib/js/jquery.nivo.slider.js"%}"></script>
+		<script src="{%static "lib/home.js"%}"></script>
+		<!-- jquery.nicescroll.min js -->
+		<script src="{%static "js/jquery.nicescroll.min.js"%}"></script>
+		<!-- countdon.min js -->
+		<script src="{%static "js/countdon.min.js"%}"></script>
+		<!-- wow js -->
+		<script src="{%static "js/wow.min.js"%}"></script>
+		<!-- Google Map js -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR2G75DI50DMsSSAMPk29g9S5SRdCU6Bs"></script>
+		
+		<script>
+			function initialize() {
+				var mapOptions = {
+					zoom: 15,
+					scrollwheel: false,
+					center: new google.maps.LatLng( -33.911335, 151.207210),
+				};
+				var map = new google.maps.Map(document.getElementById('googleMap'),
+					mapOptions
+				);
+				var marker = new google.maps.Marker({
+					position: map.getCenter(),
+					map: map
+				});
+				var contentString = '<div id="content">'+
+					'<div id="siteNotice">'+
+					'</div>'+
+					'<div id="bodyContent">'+
+					'<p>Sydney, </br>Spring Street, </br>Rosebery, AU</p>'+		
+					'</div>'+
+					'</div>';
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+				});
+					infowindow.open(map, marker);
+	
+				
+
+				map.setOptions({styles: styles});
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		
+		<script src="{%static "js/plugins.js"%}"></script>
+		<!-- main js -->
+		<script src="{%static "js/main.js"%}"></script>
+	</body>
+</html>
